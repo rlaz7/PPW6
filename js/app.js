@@ -47,7 +47,7 @@ async function loadMahasiswa(keyword = '') {
 
         //Percobaan 6-1 Langkah 4 kirim ekstrak json \
         const result = await response.json();
-        if(result.status === 'seccess'){
+        if(result.status === 'success'){
             renderTable(result.data, keyword);
         } else {
             showAlert(result.message, 'danger');
