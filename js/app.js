@@ -43,7 +43,7 @@ async function loadMahasiswa(keyword = '') {
 
         //Percobaan 6-1 Langkah 4 kirim request
         const response = await fetch(url);
-            if (!response.ok) throw new Error('HTTP Error: ${respone.status}');
+            if (!response.ok) throw new Error('HTTP Error: ${response.status}');
 
         //Percobaan 6-1 Langkah 4 kirim ekstrak json \
         const result = await response.json();
@@ -188,13 +188,13 @@ if (formTambah) {
 
         try {
             // Percobaan 6-2 Langkah 5
-            const respone = await fetch(API_URL, {
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json' },
                 body: JSON.stringify(dataMahasiswa)
             });
 
-            const result = await respone.json();
+            const result = await response.json();
 
             if (response.ok && result.status === 'success') {
                 showAlert(result.message, 'success');
